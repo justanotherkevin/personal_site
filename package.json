@@ -9,7 +9,8 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-transition-group": "^2.4.0"
   },
   "scripts": {
     "start": "npm-run-all -p watch-css start-js",
@@ -20,7 +21,7 @@
     "predeploy": "npm run build",
     "start-js": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
-    "build-css": "node-sass-chokidar ./src/index.scss ./sec/index.css",
+    "build-css": "node-sass-chokidar ./src/index.scss ./src/index.css",
     "watch-css": "npm run build-css && node-sass-chokidar ./src/index.scss ./src/index.css --watch --skip-initial"
   },
   "devDependencies": {

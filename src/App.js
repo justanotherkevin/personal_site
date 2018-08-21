@@ -1,23 +1,34 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import logo from './logo.svg';
 import Navbar from './components/Navbar/Navbar';
-
-import './App.css';
+import Header from './components/Header/Header';
+import Home from './pages/Home/Home';
 
 class App extends Component {
-  componentDidMount() {
-  }
+  componentDidMount() {}
   render() {
-    return <div className="App">
-        <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+    return (
+      <div className="App">
         <Navbar />
-        {/* <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p> */}
-      </div>;
+        <main>
+          <TransitionGroup>
+            <CSSTransition
+              key={window.location.pathname}
+              classNames="fade"
+              timeout={300}
+            >
+              <Switch>
+                <Route exact path="/" component={Header} />
+                <Route path="/test" component={Home} />
+                {/* <Route path="/schedule" component={Schedule} /> */}
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
+        </main>
+      </div>
+    );
   }
 }
 
