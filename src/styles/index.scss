@@ -1,0 +1,72 @@
+@import 'preset.scss';
+* {
+  box-sizing: border-box;
+}
+body {
+  @include background($home-image);
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  margin: 0;
+  padding: 0;
+  font: 16px/20px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+.primary-color {
+  color: $primary-color;
+}
+.secondary-color {
+  color: $secondary-color;
+}
+main {
+  padding: 4em;
+  // height: 100%;
+  min-height: calc(100vh - 60px);
+
+  .icons {
+    margin-top: 1em;
+    a {
+      // padding: 0.4em;
+      &:hover {
+        color: $secondary-color;
+        @include easeOut();
+      }
+    }
+  }
+}
+/* react cssTransition */
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
+
+@import '../App.scss';
+@import '../components/Navbar/navbar.scss';
+@import '../components/Header/header.scss';
+@import '../components/Socials/socials.scss';
+
+@import '../pages/Home/home.scss';
