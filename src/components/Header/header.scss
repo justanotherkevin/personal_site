@@ -1,0 +1,21 @@
+.header-wrapper {
+  background: lightgray;
+}
+
+hr.star-light {
+  &:after {
+    background-color: lightgray;
+    position: relative;
+    top: -0.8em;
+    display: inline-block;
+    padding: 0 0.25em;
+    content: '\f005';
+    font-family: FontAwesome;
+    font-size: 2em;
+  }
+  max-width: 15rem;
+  border-top: 0.25rem solid;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #fff;
+}
