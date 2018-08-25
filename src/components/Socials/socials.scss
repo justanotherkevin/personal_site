@@ -1,0 +1,12 @@
+.social-wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 360px;
+  a {
+    margin: 0 0.5em;
+  }
+  i:hover {
+    color: $secondary-color;
+    @include easeOut;
+  }
+}

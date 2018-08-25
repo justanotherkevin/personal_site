@@ -1,0 +1,23 @@
+#home {
+  min-height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  & > * {
+    flex: 1 auto;
+  }
+  .content-wrapper {
+    .lg-heading {
+      font-size: 5em;
+      line-height: 1;
+      margin-bottom: 0.5em;
+    }
+    .sm-heading {
+      // padding: 0.2em 1em;
+      // background: rgba(lighten($primary-color, 2), 0.5);
+    }
+  }
+}
