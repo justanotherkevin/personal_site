@@ -10,23 +10,21 @@ class App extends Component {
   componentDidMount() {}
   render() {
     return (
-      <div className="App">
+      <div id="app">
         <Navbar />
-        <main>
-          <TransitionGroup>
-            <CSSTransition
-              key={window.location.pathname}
-              classNames="fade"
-              timeout={300}
-            >
-              <Switch>
-                <Route exact path="/" component={Header} />
-                <Route path="/test" component={Home} />
-                {/* <Route path="/schedule" component={Schedule} /> */}
-              </Switch>
-            </CSSTransition>
-          </TransitionGroup>
-        </main>
+        <TransitionGroup id="transition-group-wrapper">
+          <CSSTransition
+            key={window.location.pathname}
+            classNames="fade"
+            timeout={300}
+          >
+            <Switch>
+              <Route exact path="/" component={Header} />
+              <Route path="/test" component={Home} />
+              {/* <Route path="/schedule" component={Schedule} /> */}
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
       </div>
     );
   }
