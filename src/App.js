@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import logo from './logo.svg';
 import Navbar from './components/Navbar/Navbar';
-import Header from './components/Header/Header';
-import Home from './pages/Home/Home';
+import Home from './pages/Home/Home.js';
+import Projects from './pages/Projects/Projects.js';
 
 class App extends Component {
   componentDidMount() {}
@@ -19,9 +18,8 @@ class App extends Component {
             timeout={300}
           >
             <Switch>
-              <Route exact path="/" component={Header} />
-              <Route path="/test" component={Home} />
-              {/* <Route path="/schedule" component={Schedule} /> */}
+              <Route exact path="/" component={Home} />
+              <Route path="/projects" component={Projects} />
             </Switch>
           </CSSTransition>
         </TransitionGroup>
