@@ -17,7 +17,6 @@ export default class Navbar extends Component {
     for (var i = 0; i < navLinks.length; i++) {
       navLinks[i].addEventListener('click', this.toggleMenuOpen, false);
     }
-    
   }
   componentWillUnmount() {
     var navLinks = document.getElementsByClassName('nav-link');
