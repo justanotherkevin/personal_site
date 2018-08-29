@@ -1,0 +1,30 @@
+.projects-wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #141414;
+  border-radius: 10px;
+  padding: 10px;
+  & > .project-wrapper {
+    background-color: #80cbc4;
+    padding: 30px;
+    & > * {
+      pointer-events: none;
+    }
+  }
+  @for $x from 1 through 3 {
+    &:nth-child(#{$x}).active {
+      transition-delay: $x * 0.1s;
+    }
+  }
+  .project-wrapper {
+    &.active {
+      grid-area: 1 / 2 / 4 / 5;
+    }
+    &.animate-slie-right {
+      @include animation(0s, 0.8s, fade-out-right);
+      animation-iteration-count: 1;
+      transform-origin: 50% 50%;
+    }
+  }
+}
