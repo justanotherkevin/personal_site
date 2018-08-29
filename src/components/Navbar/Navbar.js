@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { stat } from 'fs';
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -10,9 +9,22 @@ export default class Navbar extends Component {
     };
   }
   handleClick = e => {};
-  handelMenuClick = e => {
+  toggleMenuOpen = e => {
     this.setState({ isMenuOpen: this.state.isMenuOpen === 0 ? 1 : 0 });
   };
+  componentDidMount() {
+    var navLinks = document.getElementsByClassName('nav-link');
+    for (var i = 0; i < navLinks.length; i++) {
+      navLinks[i].addEventListener('click', this.toggleMenuOpen, false);
+    }
+    
+  }
+  componentWillUnmount() {
+    var navLinks = document.getElementsByClassName('nav-link');
+    for (var i = 0; i < navLinks.length; i++) {
+      navLinks[i].removeEventListener('click', this.toggleMenuOpen, false);
+    }
+  }
   render() {
     const toggleShow = this.state.isMenuOpen === 1 ? ' show' : '';
     return (
@@ -21,7 +33,7 @@ export default class Navbar extends Component {
           className={
             'menu-btn' + (this.state.isMenuOpen === 0 ? ' open' : ' close')
           }
-          onClick={this.handelMenuClick}
+          onClick={this.toggleMenuOpen}
           ref="nav-menu-btn"
         >
           <div className="btn-line" />
@@ -35,9 +47,9 @@ export default class Navbar extends Component {
           </div>
           <ul className="menu-nav">
             <li className="nav-item current">
-              <a href="index.html" className="nav-link">
+              <Link className="nav-link" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a href="about.html" className="nav-link">
@@ -45,9 +57,9 @@ export default class Navbar extends Component {
               </a>
             </li>
             <li className="nav-item">
-              <a href="work.html" className="nav-link">
-                My Work
-              </a>
+              <Link className="nav-link" to="/projects">
+                Projects
+              </Link>
             </li>
             <li className="nav-item">
               <a href="contact.html" className="nav-link">
