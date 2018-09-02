@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home.js';
 import Projects from './pages/Projects/Projects.js';
+import About from './pages/About/About.js';
 
 class App extends Component {
   componentDidMount() {}
@@ -20,6 +21,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/projects" component={Projects} />
+              <Route path="/about" component={About} />
             </Switch>
           </CSSTransition>
         </TransitionGroup>
