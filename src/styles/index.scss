@@ -1,6 +1,8 @@
 @import 'preset.scss';
 * {
   box-sizing: border-box;
+  position: relative;
+  // transition: all 0.7s;
 }
 body {
   @include background($home-image);
@@ -21,25 +23,41 @@ h3 {
   margin: 0;
   font-weight: 400;
 }
+h3 {
+  font-size: 3rem;
+}
 a {
+  position: relative;
   color: #fff;
   text-decoration: none;
+  @keyframes example {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  &:hover {
+    color: $secondary-color;
+    &:before {
+      content: '';
+      border-bottom: 0.1rem solid $secondary-color;
+      position: absolute;
+      bottom: 0;
+      animation: example 2s ease-out infinite alternate;
+    }
+  }
 }
 header {
   position: fixed;
   z-index: 2;
   width: 100%;
 }
-.primary-color {
-  color: $primary-color;
-}
-.secondary-color {
-  color: $secondary-color;
-}
 main {
-  padding: 4em;
+  // padding: 4em;
   // height: 100%;
-  min-height: calc(100vh - 60px);
+  // min-height: calc(100vh - 60px);
 
   .icons {
     margin-top: 1em;
@@ -52,20 +70,29 @@ main {
     }
   }
 }
+.primary-color {
+  color: $primary-color;
+}
+.secondary-color {
+  color: $secondary-color;
+}
+.font-5rem {
+  font-size: 5rem;
+}
 /* react cssTransition */
 .fade-enter {
   opacity: 0;
   z-index: 1;
 }
-
 .fade-enter.fade-enter-active {
   opacity: 1;
-  transition: opacity 250ms ease-in;
+  transition: 2s opacity 250ms ease-in;
+  // @include animation(0s,)
 }
 
-@import '../App.scss';
-@import '../components/Navbar/navbar.scss';
 @import '../components/Header/header.scss';
+@import '../components/Footer/footer.scss';
+@import '../components/Navbar/navbar.scss';
 @import '../components/Socials/socials.scss';
 
 @import '../pages/Home/home.scss';

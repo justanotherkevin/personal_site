@@ -8,9 +8,23 @@
   & > .project-wrapper {
     background-color: #80cbc4;
     padding: 30px;
+    opacity: 0.7;
     & > * {
       pointer-events: none;
+      transition: all 0;
     }
+    // &:nth-child(1) {
+    //   border-top-left-radius: ($border-radius-size);
+    // }
+    // &:nth-child(5) {
+    //   border-bottom-left-radius: ($border-radius-size);
+    // }
+    // &:nth-child(4) {
+    //   border-top-right-radius: ($border-radius-size);
+    // }
+    // &:nth-child(8) {
+    //   border-bottom-right-radius: ($border-radius-size);
+    // }
   }
   @for $x from 1 through 3 {
     &:nth-child(#{$x}).active {
@@ -20,6 +34,8 @@
   .project-wrapper {
     &.active {
       grid-area: 1 / 2 / 4 / 5;
+      opacity: 1;
+      @include animation(0s, 0.8s, sliddIn-bottom-left);
     }
     &.animate-slie-right {
       @include animation(0s, 0.8s, fade-out-right);
