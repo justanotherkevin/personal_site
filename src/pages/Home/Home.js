@@ -27,7 +27,17 @@ export default class Home extends Component {
               <div className="four grid-box" />
               <div className="five grid-box" />
               <div className="six grid-box" />
-              <div className="seven grid-box" />
+              <div className="seven grid-box">
+                <a
+                  href="https://codepen.io/tickle-tickle/pen/GwKRbM"
+                  target="_blank"
+                >
+                  <img
+                    src="https://res.cloudinary.com/dftsnk497/image/upload/v1547310342/personalSite/codepen-typewriter.png"
+                    alt=""
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </section>
