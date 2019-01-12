@@ -13,13 +13,21 @@ export default class Home extends Component {
     return (
       <main id="home">
         <section className="hero-wrapper">
-          {/* <div className="sample" data-splitting="">
-            <p>Thanks for stopping by</p>
-          </div> */}
           <div className="content-wrapper">
             <div className="content">
               <div className="last-name" />
-              <h3>Welcome to Kevin's personal site </h3>
+              {/* <h3>Welcome to Kevin's personal site </h3> */}
+            </div>
+          </div>
+          <div className="grid-wrapper">
+            <div className="grid-container">
+              <div className="one grid-box" />
+              <div className="two grid-box" />
+              <div className="three grid-box" />
+              <div className="four grid-box" />
+              <div className="five grid-box" />
+              <div className="six grid-box" />
+              <div className="seven grid-box" />
             </div>
           </div>
         </section>
