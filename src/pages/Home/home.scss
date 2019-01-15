@@ -107,25 +107,25 @@
   .six,
   .seven {
     border-top-left-radius: 25px;
+  }
+  .grid-box {
     overflow: hidden;
+    img {
+      height: 100%;
+      transform: translateX(-15%);
+    }
   }
   .one {
     grid-area: one;
     background-color: red;
   }
-
   .two {
     grid-area: two;
     background-color: blue;
   }
-
   .three {
     grid-area: three;
     background-color: black;
-    img {
-      width: 100%;
-      transform: translateX(-15%);
-    }
   }
 
   .four {

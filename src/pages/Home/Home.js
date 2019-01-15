@@ -7,6 +7,16 @@ import Projects from '../Projects/Projects';
 
 export default class Home extends Component {
   state = {
+    drumKit: {
+      link: 'https://polymer940c.github.io/simple-drum/',
+      imgSrc:
+        'https://res.cloudinary.com/dftsnk497/image/upload/v1547517696/personalSite/drum-kit.png'
+    },
+    fruitStand: {
+      link: 'https://github.com/polymer940c/fruits-shop-react',
+      imgSrc:
+        'https://res.cloudinary.com/dftsnk497/image/upload/v1547511524/personalSite/fruit-store.png'
+    },
     typeWriter: {
       link: 'https://codepen.io/tickle-tickle/pen/GwKRbM',
       imgSrc:
@@ -16,6 +26,16 @@ export default class Home extends Component {
       link: 'https://polymer940c.github.io/TicTacToe/',
       imgSrc:
         'https://res.cloudinary.com/dftsnk497/image/upload/v1547444919/personalSite/TTT.png'
+    },
+    hightlighterDom: {
+      link: 'https://polymer940c.github.io/highlighter-dom-ele/',
+      imgSrc:
+        'https://res.cloudinary.com/dftsnk497/image/upload/v1547536405/personalSite/highlighter.png'
+    },
+    checklistLocalstorage: {
+      link: 'https://polymer940c.github.io/checklist-localstorage/',
+      imgSrc:
+        'https://res.cloudinary.com/dftsnk497/image/upload/v1547527627/personalSite/checklist-localstorage.png'
     }
   };
   componentDidMount() {
@@ -34,15 +54,31 @@ export default class Home extends Component {
           <div className="grid-wrapper">
             <div className="grid-container">
               <div className="one grid-box" />
-              <div className="two grid-box" />
+              <div className="two grid-box">
+                <a href={this.state.checklistLocalstorage.link} target="_blank">
+                  <img src={this.state.checklistLocalstorage.imgSrc} alt="" />
+                </a>
+              </div>
               <div className="three grid-box">
                 <a href={this.state.ttt.link} target="_blank">
                   <img src={this.state.ttt.imgSrc} alt="" />
                 </a>
               </div>
-              <div className="four grid-box" />
-              <div className="five grid-box" />
-              <div className="six grid-box" />
+              <div className="four grid-box">
+                <a href={this.state.hightlighterDom.link} target="_blank">
+                  <img src={this.state.hightlighterDom.imgSrc} alt="" />
+                </a>
+              </div>
+              <div className="five grid-box">
+                <a href={this.state.drumKit.link} target="_blank">
+                  <img src={this.state.drumKit.imgSrc} alt="" />
+                </a>
+              </div>
+              <div className="six grid-box">
+                <a href={this.state.fruitStand.link} target="_blank">
+                  <img src={this.state.fruitStand.imgSrc} alt="" />
+                </a>
+              </div>
 
               <div className="seven grid-box">
                 <a href={this.state.typeWriter.link} target="_blank">
