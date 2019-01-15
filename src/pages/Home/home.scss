@@ -107,6 +107,7 @@
   .six,
   .seven {
     border-top-left-radius: 25px;
+    overflow: hidden;
   }
   .one {
     grid-area: one;
@@ -120,7 +121,11 @@
 
   .three {
     grid-area: three;
-    background-color: red;
+    background-color: black;
+    img {
+      width: 100%;
+      transform: translateX(-15%);
+    }
   }
 
   .four {
@@ -135,12 +140,14 @@
 
   .six {
     grid-area: six;
-    background-color: red;
   }
 
   .seven {
     grid-area: seven;
-    background-color: red;
+    img {
+      height: 100%;
+      transform: translateX(-15%);
+    }
   }
 }
 

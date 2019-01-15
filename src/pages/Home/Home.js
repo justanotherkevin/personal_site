@@ -6,8 +6,20 @@ import Splitting from 'splitting';
 import Projects from '../Projects/Projects';
 
 export default class Home extends Component {
+  state = {
+    typeWriter: {
+      link: 'https://codepen.io/tickle-tickle/pen/GwKRbM',
+      imgSrc:
+        'https://res.cloudinary.com/dftsnk497/image/upload/v1547310342/personalSite/codepen-typewriter.png'
+    },
+    ttt: {
+      link: 'https://polymer940c.github.io/TicTacToe/',
+      imgSrc:
+        'https://res.cloudinary.com/dftsnk497/image/upload/v1547444919/personalSite/TTT.png'
+    }
+  };
   componentDidMount() {
-    Splitting();
+    // Splitting();
   }
   render() {
     return (
@@ -23,19 +35,18 @@ export default class Home extends Component {
             <div className="grid-container">
               <div className="one grid-box" />
               <div className="two grid-box" />
-              <div className="three grid-box" />
+              <div className="three grid-box">
+                <a href={this.state.ttt.link} target="_blank">
+                  <img src={this.state.ttt.imgSrc} alt="" />
+                </a>
+              </div>
               <div className="four grid-box" />
               <div className="five grid-box" />
               <div className="six grid-box" />
+
               <div className="seven grid-box">
-                <a
-                  href="https://codepen.io/tickle-tickle/pen/GwKRbM"
-                  target="_blank"
-                >
-                  <img
-                    src="https://res.cloudinary.com/dftsnk497/image/upload/v1547310342/personalSite/codepen-typewriter.png"
-                    alt=""
-                  />
+                <a href={this.state.typeWriter.link} target="_blank">
+                  <img src={this.state.typeWriter.imgSrc} alt="" />
                 </a>
               </div>
             </div>
