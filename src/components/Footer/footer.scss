@@ -1,6 +1,7 @@
 .footer-nav {
   position: fixed;
   bottom: 0;
+  z-index: 10;
   width: 100%;
   ul {
     text-align: center;
@@ -14,5 +15,9 @@
     a {
       transition: all 0.7s;
     }
+  }
+  .social-wrapper {
+    margin: 0 auto;
+    padding: 20px 0;
   }
 }

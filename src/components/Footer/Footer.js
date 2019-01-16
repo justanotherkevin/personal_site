@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Social from '../../components/Socials/Socials';
+
+const socialLinks = () => {
+  let links = {
+    linkedin: 'https://www.linkedin.com/in/kevin-w-hu/',
+    github: 'https://github.com/polymer940c'
+  };
+  return (
+    <section className={'social-wrapper '}>
+      <a href="mailto:hu.kevin.w@gmail.com">
+        <i className="fa fa-envelope fa-2x" />
+      </a>
+      <a href={links.linkedin}>
+        <i className="fab fa-linkedin fa-2x" />
+      </a>
+      <a href={links.github}>
+        <i className="fab fa-github fa-2x" />
+      </a>
+    </section>
+  );
+};
 
 export default class Footer extends Component {
   render() {
-    const url = window.location.pathname;
-    return (
-      <section className="footer-nav">
-        {/* <ul>
-          <li>
-            <Link
-              to="/about"
-              className={url === '/about' ? 'secondary-color' : ''}
-            >
-              Author
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className={url === '/' ? 'secondary-color' : ''}>
-              Home
-            </Link>
-          </li>
-        </ul> */}
-        <Social />
-      </section>
-    );
+    return <section className="footer-nav">{socialLinks()}</section>;
   }
 }
