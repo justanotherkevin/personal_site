@@ -58,7 +58,7 @@
       filter: blur(0px);
       -webkit-filter: blur(0px);
     }
-    .preview-wrapper {
+    .sample-wrapper {
       left: 0;
     }
   }
@@ -68,7 +68,7 @@
   .grid-wrapper {
     z-index: 2;
   }
-  .preview-wrapper {
+  .sample-wrapper {
     z-index: 3;
   }
 
@@ -94,14 +94,22 @@
       }
     }
   }
-  .preview-wrapper {
+  .sample-wrapper {
     position: absolute;
     left: (-150%);
-    height: 100%;
     display: flex;
     align-items: center;
-    .preview-container {
-      padding: 0 40px;
+    transition: all 0.75s;
+    .sample-container {
+      min-width: 50%;
+      max-width: 70%;
+      text-align: left;
+      background: black;
+      border-bottom-right-radius: $border-radius-grid;
+      box-shadow: 1px 1px 2px 1px #252525;
+      &.show {
+        padding: 20px 40px;
+      }
     }
   }
   .grid-wrapper {
@@ -133,18 +141,21 @@
       'seven  seven  six  six  five  five  five  five  five  five '
       'seven  seven  six  six  five  five  five  five  five  five ';
   }
-  .one,
-  .two,
-  .three,
-  .six,
-  .seven {
-    border-top-left-radius: 25px;
-  }
   .grid-box {
+    border-radius: $border-radius-size;
     overflow: hidden;
     background-color: black;
+    box-shadow: 1px 1px 2px 1px #252525;
+
     img {
       height: 100%;
+    }
+    &.one,
+    &.two,
+    &.three,
+    &.six,
+    &.seven {
+      border-top-left-radius: $border-radius-grid;
     }
   }
   .one {

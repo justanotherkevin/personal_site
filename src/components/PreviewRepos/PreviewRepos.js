@@ -8,7 +8,7 @@ const PreviewRepos = ({ previewRepos, setStateActiveRepo }) => {
     'four',
     'five',
     'six',
-    'seve'
+    'seven'
   ];
   let arr = Object.keys(previewRepos).map(key => previewRepos[key]);
 

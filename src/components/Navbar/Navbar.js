@@ -50,7 +50,7 @@ export default class Navbar extends Component {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link" to="/about">
                 About Me
               </Link>
@@ -64,7 +64,7 @@ export default class Navbar extends Component {
               <a href="contact.html" className="nav-link">
                 How To Reach Me
               </a>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </header>
