@@ -46,7 +46,7 @@ export default class Navbar extends Component {
           </div>
           <ul className="menu-nav">
             <li className="nav-item current">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/personal_site/">
                 Home
               </Link>
             </li>

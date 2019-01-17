@@ -20,9 +20,9 @@ class App extends Component {
             timeout={4000}
           >
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/projects" component={Projects} />
-              <Route path="/about" component={About} />
+              <Route exact path="/personal_site/" component={Home} />
+              <Route path="/personal_site/projects" component={Projects} />
+              <Route path="/personal_site/about" component={About} />
             </Switch>
           </CSSTransition>
         </TransitionGroup>

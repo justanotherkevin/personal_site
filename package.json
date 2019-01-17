@@ -2,7 +2,7 @@
   "name": "personal_site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://polymer940c.github.io/",
+  "homepage": "https://polymer940c.github.io/personal_site/",
   "dependencies": {
     "gh-pages": "^1.2.0",
     "node-sass-chokidar": "^1.3.3",
