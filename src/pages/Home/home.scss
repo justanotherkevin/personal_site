@@ -96,13 +96,14 @@
   }
   .sample-wrapper {
     position: absolute;
+    width: 100%;
+    max-width: 75%;
     left: (-150%);
     display: flex;
     align-items: center;
     transition: all 0.75s;
     .sample-container {
-      min-width: 50%;
-      max-width: 70%;
+      width: 100%;
       text-align: left;
       background: black;
       border-bottom-right-radius: $border-radius-grid;

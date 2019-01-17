@@ -59,7 +59,7 @@ export default class Home extends Component {
         },
         hightlighterDom: {
           name: 'hightlighterDom',
-          title: 'Drum Kit',
+          title: 'Follow along highlighter',
           description:
             "Ever wonder how Stripe.com made their cool looking nabar? The contents of the dropdown changes but the dropdown container it self doesn't seem to recycled to house the new contents.",
           link: 'https://polymer940c.github.io/highlighter-dom-ele/',
