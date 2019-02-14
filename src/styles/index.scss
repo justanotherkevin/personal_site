@@ -101,6 +101,43 @@ main {
 @import '../pages/Home/home.scss';
 @import '../pages/Projects/projects.scss';
 
+
+
+@media only screen and ( max-width: 720px ) {
+  #home {
+    overflow: unset;
+  }
+  .hero-wrapper {
+    .grid-wrapper {
+      .grid-container {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 100px 10px;
+        > * {
+          flex: 1;
+          margin-bottom: 10px;
+          border-radius: 8px;
+          transform: translate( 0, 0 );
+        }
+        .grid-box img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+    }
+
+    .sample-wrapper{ 
+      display: none;
+    }
+  }
+}
+
+
+
+
 @media only screen and (min-width: 1600px) {
   #home {
     .hero-wrapper {
