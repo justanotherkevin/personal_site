@@ -82,13 +82,16 @@ export default class Home extends PureComponent {
     };
   }
 
-  // componentDidUpdate() {
-  //   if (this.state.showActiveRepo === true) {
-  //     setTimeout(() => {
-  //       this.setState({ showActiveRepo: false })
-  //     }, 3000);
-  //   }
-  // }
+  componentDidUpdate() {
+    // if (this.state.showActiveRepo === true) {
+    //   setTimeout(() => {
+    //     this.setState({
+    //       showActiveRepo: false,
+    //       activeRepo: {}
+    //     })
+    //   }, 10000);
+    // }
+  }
   toggleActiveRepo = () => {
     this.setState({ showActiveRepo: !this.state.showActiveRepo })
   }
@@ -96,35 +99,38 @@ export default class Home extends PureComponent {
     this.setState({ activeRepo: this.state.previewRepos[repoName] });
   };
   unsetActiveRepo = () => {
-    this.setState({ activeRepo: {} })
+    if (!this.state.showActiveRepo) {
+      this.setState({ activeRepo: {} })
+    }
   }
   render() {
-    const { previewRepos, activeRepo, showActiveRepo } = this.state;
+    const {
+      previewRepos,
+      activeRepo,
+      showActiveRepo
+    } = this.state;
     return (
       <main id="home">
-        <section className="hero-wrapper">
+        <section className={`hero-wrapper ${showActiveRepo ? 'only-active' : ''}`}>
           <FooterSidebar text="Kevin Hu @2019" />
-          {showActiveRepo ?
-            <RepoDetailed
-              activeRepo={activeRepo}
-            /> :
-            <RepoPreview
-              activeRepo={activeRepo}
-              previewRepos={previewRepos}
-              setStateActiveRepo={this.setStateActiveRepo}
-              unsetActiveRepo={this.unsetActiveRepo}
-              toggleActiveRepo={this.toggleActiveRepo}
-            />
 
-          }
-          {/* <div className="sample-wrapper">
+          <RepoPreview
+            showActiveRepo={showActiveRepo}
+            activeRepo={activeRepo}
+            previewRepos={previewRepos}
+            setStateActiveRepo={this.setStateActiveRepo}
+            unsetActiveRepo={this.unsetActiveRepo}
+            toggleActiveRepo={this.toggleActiveRepo}
+          />
+
+          <div className={`sample-wrapper ${showActiveRepo ? 'move-in' : ''}`}>
             <div
               className={`sample-container ${activeRepo.title ? 'show' : ''}`}
             >
               {activeRepo.title && <h3>{activeRepo.title}</h3>}
               {activeRepo.description && <p>{activeRepo.description}</p>}
             </div>
-          </div> */}
+          </div>
         </section>
       </main>
     );

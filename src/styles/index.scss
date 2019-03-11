@@ -9,6 +9,9 @@ html {
 }
 body {
   background-image: $home-image;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: set-text-color($primary-color);
   margin: 0;
   padding: 0;
@@ -106,51 +109,3 @@ main {
 
 
 
-@media only screen and ( max-width: 768px ) {
-  #home {
-    overflow: unset;
-  }
-  .hero-wrapper {
-
-    .repo-preview-wrapper {
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      padding: 100px 10px;
-      > * {
-        flex: 1;
-        margin-bottom: 10px;
-        border-radius: 8px;
-        transform: translate( 0, 0 );
-      }
-      .grid-box img {
-        width: 100%;
-        height: auto;
-        // transform: translate( 0, 0 );
-      }
-    }
-    // .sample-wrapper{
-    //   display: none;
-    // }
-  }
-}
-
-
-
-
-@media only screen and (min-width: 1600px) {
-  #home {
-    .hero-wrapper {
-      .repo-preview-wrapper {
-        width: 60%;
-        padding: 100px 50px 100px 0;
-      }
-      // .sample-wrapper {
-      //   max-width: 50%;
-      //   top: 50%;
-      //   transform: translateY(-50%);
-      // }
-    }
-  }
-}

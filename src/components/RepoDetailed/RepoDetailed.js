@@ -5,7 +5,9 @@ const RepoDetailed = ({ activeRepo }) => {
     <div className="repo-detailed">
 
 
-
+      <div className="sample-wrapper">
+        <img src={activeRepo.imgSrc} ></img>
+      </div>
 
       <div className="content-wrapper">
         <div

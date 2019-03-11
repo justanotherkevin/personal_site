@@ -6,6 +6,7 @@ const RepoPreview = ({
   setStateActiveRepo,
   unsetActiveRepo,
   toggleActiveRepo,
+  showActiveRepo,
 }) => {
   const gridNumbesClass = [
     'one',
@@ -15,11 +16,15 @@ const RepoPreview = ({
     'five',
     'six',
     'seven'
-  ];
-  let arr = Object.keys(previewRepos).map(key => previewRepos[key]);
+  ],
+    arr = Object.keys(previewRepos).map(
+      key => previewRepos[key]
+    ),
+    classShowActiveRepo = showActiveRepo === true ? 'show-active' : '';
 
   return (
-    <div className={`repo-preview-wrapper background ${activeRepo.name}`}>
+    <div
+      className={`repo-preview-wrapper background ${activeRepo.name} ${classShowActiveRepo}`}>
       {arr.map((repo, i) => (
         <div
           key={i}
