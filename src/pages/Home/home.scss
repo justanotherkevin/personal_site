@@ -114,16 +114,6 @@
       color: $blue;
       animation-delay: calc(-0.5s * var(--char-index));
     }
-
-    // &:hover .char {
-    //   color: rgba(255, 255, 255, 0.3);
-    //   animation-name: glitch-bounce;
-    // }
-    // &:hover .char:before,
-    // &:hover .char:after {
-    //   opacity: 1;
-    //   animation-play-state: running;
-    // }
   }
 
   @keyframes glitch-bounce {
@@ -207,15 +197,14 @@
       transition: background-position 10s linear;
       background-position: 0px 100%;
       .repo-preview-wrapper:after {
-        border-right: 5px solid yellow;
         height: 100%;
         transition: height 10s linear;
       }
     }
     .repo-preview-wrapper {
       width: 100%;
-      max-height: 768px;
-      max-width: 768px;
+      max-height: 668px;
+      max-width: 668px;
       height: 100%;
       position: absolute;
       top: 50%;
@@ -225,7 +214,7 @@
       &:after {
         content: '';
         display: block;
-        border-right: 5px solid yellow;
+        border-right: 5px solid $secondary-color;
         height: 0;
         position: absolute;
         right: 0;
@@ -264,13 +253,21 @@
         bottom: 100px;
       }
       .sample-container {
-        width: 100%;
+        width: 90%;
+        margin: 0 auto;
         text-align: left;
         background: black;
         box-shadow: 1px 1px 2px 1px #252525;
         h3 {
           color: $secondary-color;
           border-bottom: 0.1rem solid $secondary-color;
+          a {
+            font-size: 1.5rem;
+            padding-left: 1rem;
+            &:hover:before {
+              border: none;
+            }
+          }
         }
         &.show {
           padding: 20px 40px;

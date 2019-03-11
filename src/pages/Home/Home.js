@@ -83,14 +83,14 @@ export default class Home extends PureComponent {
   }
 
   componentDidUpdate() {
-    // if (this.state.showActiveRepo === true) {
-    //   setTimeout(() => {
-    //     this.setState({
-    //       showActiveRepo: false,
-    //       activeRepo: {}
-    //     })
-    //   }, 10000);
-    // }
+    if (this.state.showActiveRepo === true) {
+      setTimeout(() => {
+        this.setState({
+          showActiveRepo: false,
+          activeRepo: {}
+        })
+      }, 10000);
+    }
   }
   toggleActiveRepo = () => {
     this.setState({ showActiveRepo: !this.state.showActiveRepo })
@@ -124,12 +124,18 @@ export default class Home extends PureComponent {
           />
 
           <div className={`sample-wrapper ${showActiveRepo ? 'move-in' : ''}`}>
-            <div
-              className={`sample-container ${activeRepo.title ? 'show' : ''}`}
-            >
-              {activeRepo.title && <h3>{activeRepo.title}</h3>}
-              {activeRepo.description && <p>{activeRepo.description}</p>}
-            </div>
+            {
+              activeRepo &&
+              <div className={`sample-container ${activeRepo.title ? 'show' : ''}`}>
+                <h3>{activeRepo.title}
+                  <a href={activeRepo.link}>
+                    <i className="fas fa-play fa-2x" />
+                  </a>
+                </h3>
+
+                <p>{activeRepo.description}</p>
+              </div>
+            }
           </div>
         </section>
       </main>
