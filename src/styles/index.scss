@@ -8,7 +8,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  background-image: url('../imgs/background.jpg');
+  background-image: $home-image;
   color: set-text-color($primary-color);
   margin: 0;
   padding: 0;
@@ -97,43 +97,42 @@ main {
 @import '../components/Footer/footer.scss';
 @import '../components/Navbar/navbar.scss';
 @import '../components/Socials/socials.scss';
-@import '../components/PreviewRepos/previewRepos.scss';
+@import '../components/RepoPreview/repoPreview.scss';
+@import '../components/RepoDetailed/repoDetailed.scss';
+@import '../components/Footer-sidebar/footerSidebar.scss';
 
 @import '../pages/Home/home.scss';
 @import '../pages/Projects/projects.scss';
 
 
 
-@media only screen and ( max-width: 720px ) {
+@media only screen and ( max-width: 768px ) {
   #home {
     overflow: unset;
   }
   .hero-wrapper {
-    .grid-wrapper {
-      .grid-container {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        padding: 100px 10px;
-        > * {
-          flex: 1;
-          margin-bottom: 10px;
-          border-radius: 8px;
-          transform: translate( 0, 0 );
-        }
-        .grid-box img {
-          width: 100%;
-          height: auto;
-          // transform: translate( 0, 0 );
-        }
+
+    .repo-preview-wrapper {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      padding: 100px 10px;
+      > * {
+        flex: 1;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        transform: translate( 0, 0 );
       }
-
+      .grid-box img {
+        width: 100%;
+        height: auto;
+        // transform: translate( 0, 0 );
+      }
     }
-
-    .sample-wrapper{ 
-      display: none;
-    }
+    // .sample-wrapper{
+    //   display: none;
+    // }
   }
 }
 
@@ -143,18 +142,15 @@ main {
 @media only screen and (min-width: 1600px) {
   #home {
     .hero-wrapper {
-      .content-wrapper {
-        // padding: 300px 0px 0px 200px;
-      }
-      .grid-wrapper .grid-container {
+      .repo-preview-wrapper {
         width: 60%;
         padding: 100px 50px 100px 0;
       }
-      .sample-wrapper {
-        max-width: 50%;
-        top: 50%;
-        transform: translateY(-50%);
-      }
+      // .sample-wrapper {
+      //   max-width: 50%;
+      //   top: 50%;
+      //   transform: translateY(-50%);
+      // }
     }
   }
 }

@@ -13,18 +13,6 @@
       pointer-events: none;
       transition: all 0;
     }
-    // &:nth-child(1) {
-    //   border-top-left-radius: ($border-radius-size);
-    // }
-    // &:nth-child(5) {
-    //   border-bottom-left-radius: ($border-radius-size);
-    // }
-    // &:nth-child(4) {
-    //   border-top-right-radius: ($border-radius-size);
-    // }
-    // &:nth-child(8) {
-    //   border-bottom-right-radius: ($border-radius-size);
-    // }
   }
   @for $x from 1 through 3 {
     &:nth-child(#{$x}).active {

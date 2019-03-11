@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Socials from '../../components/Socials/Socials';
 import 'splitting/dist/splitting.css';
 import 'splitting/dist/splitting-cells.css';
 import Splitting from 'splitting';
 import Projects from '../Projects/Projects';
-import PreviewRepos from '../../components/PreviewRepos/PreviewRepos';
+import RepoPreview from '../../components/RepoPreview/RepoPreview';
+import FooterSidebar from '../../components/Footer-sidebar/FooterSidebar';
+import RepoDetailed from '../../components/RepoDetailed/RepoDetailed';
 
-export default class Home extends Component {
+export default class Home extends PureComponent {
   constructor() {
     super();
     this.state = {
+      showActiveRepo: false,
       activeRepo: { name: '', title: '', description: '' },
       previewRepos: {
         drumKit: {
@@ -79,34 +82,49 @@ export default class Home extends Component {
     };
   }
 
+  // componentDidUpdate() {
+  //   if (this.state.showActiveRepo === true) {
+  //     setTimeout(() => {
+  //       this.setState({ showActiveRepo: false })
+  //     }, 3000);
+  //   }
+  // }
+  toggleActiveRepo = () => {
+    this.setState({ showActiveRepo: !this.state.showActiveRepo })
+  }
   setStateActiveRepo = repoName => {
     this.setState({ activeRepo: this.state.previewRepos[repoName] });
   };
-
+  unsetActiveRepo = () => {
+    this.setState({ activeRepo: {} })
+  }
   render() {
-    const { previewRepos, activeRepo } = this.state;
+    const { previewRepos, activeRepo, showActiveRepo } = this.state;
     return (
       <main id="home">
         <section className="hero-wrapper">
-          <div className="content-wrapper">
-            <div className="content">
-              <div className="last-name" />
-            </div>
-          </div>
-          <div className="grid-wrapper">
-            <PreviewRepos
+          <FooterSidebar text="Kevin Hu @2019" />
+          {showActiveRepo ?
+            <RepoDetailed
+              activeRepo={activeRepo}
+            /> :
+            <RepoPreview
+              activeRepo={activeRepo}
               previewRepos={previewRepos}
               setStateActiveRepo={this.setStateActiveRepo}
+              unsetActiveRepo={this.unsetActiveRepo}
+              toggleActiveRepo={this.toggleActiveRepo}
             />
-          </div>
-          <div className="sample-wrapper">
+
+          }
+          {/* <div className="sample-wrapper">
             <div
               className={`sample-container ${activeRepo.title ? 'show' : ''}`}
             >
               {activeRepo.title && <h3>{activeRepo.title}</h3>}
               {activeRepo.description && <p>{activeRepo.description}</p>}
             </div>
-          </div>
+          </div> */}
         </section>
       </main>
     );

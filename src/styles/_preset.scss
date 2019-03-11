@@ -3,7 +3,7 @@ $secondary-color: #eece1a;
 $yellow: #eece1a;
 $blue: #b7f5de;
 $show-home-image: true;
-$home-image: url(../imgs/background.jpg);
+$home-image: url('../imgs/Optimized-bokeh-eyeglasses-eyewear-1331386.jpg');
 $background-opacity: 0.9;
 $border-radius-size: 0.6rem;
 $border-radius-grid: 2rem;
@@ -67,8 +67,8 @@ $border-radius-grid: 2rem;
     @content;
   }
 }
-/* 
-  example usage: 
+/*
+  example usage:
   @include keyframe(changecolour) { 0% {color: #000;} 100% {color: #fff;}}
 */
 @mixin keyframes($animation_name) {
@@ -89,7 +89,7 @@ $border-radius-grid: 2rem;
   }
 }
 /*
-  Example usage: 
+  Example usage:
   @include animation(10s, 5s, changecolour)
 */
 @mixin animation($delay, $duration, $animation, $timing: ease-out) {

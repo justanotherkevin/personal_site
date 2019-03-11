@@ -1,0 +1,28 @@
+.footer-sidebar-wrapper {
+    // display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    // height: 100%;
+    width: 100%;
+    .content {
+      width: 100%;
+      transform: rotate(.25turn);
+      transform-origin: left bottom;
+      display: flex;
+      align-items: center;
+      .last-name {
+        $size: 50px;
+        width: $size;
+        height: $size;
+        background-image: url('../imgs/last_name.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .info-container {
+        padding-left: 10px;
+        color: lightgray;
+      }
+    }
+  }

@@ -1,0 +1,23 @@
+ .repo-detailed-content-wrapper {
+    position: absolute;
+    width: 100%;
+    max-width: 75%;
+    left: (-150%);
+    display: flex;
+    align-items: center;
+    transition: all 0.75s;
+    .sample-container {
+      width: 100%;
+      text-align: left;
+      background: black;
+      border-bottom-right-radius: $border-radius-grid;
+      box-shadow: 1px 1px 2px 1px #252525;
+      h3 {
+        color: $secondary-color;
+        border-bottom: 0.1rem solid $secondary-color;
+      }
+      &.show {
+        padding: 20px 40px;
+      }
+    }
+  }
