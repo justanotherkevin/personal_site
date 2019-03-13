@@ -3,11 +3,11 @@ $secondary-color: #eece1a;
 $yellow: #eece1a;
 $blue: #b7f5de;
 $show-home-image: true;
-$home-image: url('../imgs/Optimized-bokeh-eyeglasses-eyewear-1331386.jpg');
+$home-image: url('../imgs/Optimized-bokeh-eyeglasses-eyewear-min.jpg');
 $background-opacity: 0.9;
 $border-radius-size: 0.6rem;
 $border-radius-grid: 2rem;
-
+$sample-repo-max-width: 668px;
 
 @mixin easeOut {
   transition: all 0.5s ease-out;

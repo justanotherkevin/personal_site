@@ -8,10 +8,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  background-image: $home-image;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-color: #161616;
   color: set-text-color($primary-color);
   margin: 0;
   padding: 0;
@@ -94,7 +91,24 @@ main {
 #app {
   max-width: 1200px;
   margin: 0 auto;
+  background-image: $home-image;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
+@keyframes slidIn-top-to-bottom {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+    transform: translate(-100%, -100%) scale(.2) rotate(90deg);
+  }
+  to {
+    transform: translateY(0%);
+     opacity: 1;
+  }
+}
+
+
 
 @import '../components/Header/header.scss';
 @import '../components/Footer/footer.scss';
