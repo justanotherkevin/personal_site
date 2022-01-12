@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
@@ -19,11 +19,11 @@ class App extends Component {
             classNames="fade"
             timeout={4000}
           >
-            <Switch>
-              <Route exact path="/personal_site/" component={Home} />
-              <Route path="/personal_site/projects" component={Projects} />
-              <Route path="/personal_site/about" component={About} />
-            </Switch>
+            <Routes>
+              <Route exact path="/personal_site/" element={<Home />} />
+              <Route path="/personal_site/projects" element={<Projects/>} />
+              <Route path="/personal_site/about" element={<About/>} />
+            </Routes>
           </CSSTransition>
         </TransitionGroup>
         <Footer />
